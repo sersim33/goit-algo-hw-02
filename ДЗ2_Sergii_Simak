@@ -19,10 +19,10 @@ def process_request():
 
 while True:
     # Prompt the user for input to exit the program
-    user_input = input("Press 'q' to exit, any other key to continue: ")
+    user_input = input("Press 'ex' to exit, any other key to continue: ")
 
     # Check if the user wants to exit
-    if user_input.lower() == 'q':
+    if user_input.lower() == 'ex':
         print("Exiting the program...")
         break  # Exit 
 
