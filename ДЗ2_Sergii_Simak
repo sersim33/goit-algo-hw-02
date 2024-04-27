@@ -1,0 +1,31 @@
+from queue import Queue
+import uuid
+
+queue = Queue()
+
+def generate_request():
+    # Generate a unique ID for the request
+    request_id = str(uuid.uuid4())
+    new_request = {
+        "id": request_id,
+        "data": "some_data"
+    }
+    queue.put(new_request)
+
+def process_request():
+    while not queue.empty():
+        request = queue.get()  # Get the request from the queue
+        print("Processing request:", request)
+
+while True:
+    # Prompt the user for input to exit the program
+    user_input = input("Press 'q' to exit, any other key to continue: ")
+
+    # Check if the user wants to exit
+    if user_input.lower() == 'q':
+        print("Exiting the program...")
+        break  # Exit 
+
+
+    generate_request()
+    process_request()
