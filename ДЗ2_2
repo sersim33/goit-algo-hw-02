@@ -1,0 +1,19 @@
+from collections import deque
+
+def is_palindrome(s):
+    s = s.lower().replace(" ", "")
+
+    queue = deque()
+
+    for el in s:
+      queue.append(el)
+
+    while len(queue) > 1:
+      if queue.popleft() != queue.pop():
+          return False
+
+    return True
+
+s = "ror"
+
+print(is_palindrome(s))
